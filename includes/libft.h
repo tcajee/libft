@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:24:02 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/18 14:35:30 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/19 15:35:04 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typede  struct  s_list
+typedef  struct  s_list
 {
     void *content;
     size_t content_size;
