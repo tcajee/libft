@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:24:02 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/19 15:35:04 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/20 09:22:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 typedef  struct  s_list
 {
