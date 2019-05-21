@@ -1,1 +1,0 @@
-int isalnum(int c);

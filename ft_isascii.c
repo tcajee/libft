@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:59:01 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/20 16:55:34 by tcajee           ###   ########.fr       */
+/*   Created: 2019/05/21 14:38:11 by tcajee            #+#    #+#             */
+/*   Updated: 2019/05/21 14:41:51 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int tolower(int c)
+int	ft_isascii(int c)
 {
-    if (c < 91 && c > 64)
-    {
-        c += 48;
-        return (c);
-    }
-    return (c);
+	return (c <= 127 && c >= 0);
 }

@@ -1,1 +1,0 @@
-int isalpha(int c);

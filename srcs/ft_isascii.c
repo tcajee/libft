@@ -1,1 +1,0 @@
-int isascii(int c);
