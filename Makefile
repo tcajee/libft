@@ -6,11 +6,11 @@
 #    By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/18 14:40:51 by tcajee            #+#    #+#              #
-#    Updated: 2019/05/21 10:12:36 by tcajee           ###   ########.fr        #
+#    Updated: 2019/05/23 16:36:00 by tcajee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Werror -Wextra -I. -c
+FLAGS = -Wall -Werror -Wextra -c
 
 NAME = libft.a
 
@@ -32,9 +32,9 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 	echo "Libft.a..."
-	ranlib $(NAME)
+	#ranlib $(NAME)
 	echo "Indexed..."
 
 $(OBJS): $(SRCS)

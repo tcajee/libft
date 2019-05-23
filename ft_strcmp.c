@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:27:32 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/22 14:57:24 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/23 10:34:43 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-	const char *str1;
-	const char *str2;
+	int			i;
+	const char	*str1;
+	const char	*str2;
 
 	str1 = s1;
 	str2 = s2;
@@ -27,8 +27,3 @@ int	ft_strcmp(const char *s1, const char *s2)
 		i++;
 	return (((unsigned char)(str1[i])) - ((unsigned char)(str2[i])));
 }
-
-
-//return (((unsigned char)*str1) - ((unsigned char)*str2));
-//return (((unsigned char)(*str1 + 1)) - ((unsigned char)(*str2 + 1)));
-// (ft_isalpha(*str1) \ && ft_isalpha(*str2)))

@@ -1,3 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tcajee <tcajee@student.wethinkcode.co.za   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/23 15:07:11 by tcajee            #+#    #+#             */
+/*   Updated: 2019/05/23 16:52:49 by tcajee           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stddef.h>
-void    bzero(void *s, size_t n);
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int	*ip;
+
+	ip = s;
+	while (i < n)
+		*ip = 0;
+}
