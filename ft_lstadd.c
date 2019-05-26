@@ -1,3 +1,15 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/25 00:38:18 by tcajee            #+#    #+#             */
+/*   Updated: 2019/05/25 00:46:10 by tcajee           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-void    ft_lstadd(t_list **alst, t_list *new);
+
+void	ft_lstadd(t_list **alst, t_list *new);
