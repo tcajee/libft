@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 11:21:02 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/26 16:05:09 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/27 08:30:36 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = -1;
 	dst_h = (unsigned char *)dst;
 	src_h = (unsigned char *)src;
-
 	if (dst_h == src_h)
 		return (dst_h);
 	if (dst_h < src_h)
