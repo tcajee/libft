@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:35:23 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/27 17:45:15 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/28 08:10:20 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,12 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t i;
 
-	i = 0;
-	while (i < n && n != 0)
-	{
-		if (*(s1 + i) != *(s2 + i))
-			return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
-		else if (*(s1 + i) && (*(s1 + i) == *(s2 + i)))
-			i++;
-		else
-			return (0);
-	}
-	return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
+	i = n;
+	if (i > ft_strlen(s1))
+		i = ft_strlen(s1) + 1;
+	if (i > ft_strlen(s2))
+		i = ft_strlen(s2) + 1;
+	return (ft_memcmp(s1, s2, i));
 }
-
-//	else if ((*(s1 + i) || *(s2 + i)) && (*(s1 + i) == *(s2 + i)))

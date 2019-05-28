@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 08:31:56 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/27 16:13:15 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/28 07:31:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (n--)
 	{
 		if (*s1_h++ != *s2_h++)
-			return (*(unsigned char *)(s1_h - 1) - \
-					*(unsigned char *)(s2_h - 1));
+			return (*(s1_h - 1) - *(s2_h - 1));
 	}
 	return (0);
 }
