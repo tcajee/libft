@@ -6,15 +6,15 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/29 14:36:08 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/31 12:05:09 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 typedef	struct		s_list
 {
@@ -22,6 +22,11 @@ typedef	struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+size_t				ft_strwcount(const char *s, char c);
+const char			*ft_strwnext(const char *s, char c);
+size_t				ft_strwlen(const char *s, char c);
+int					ft_iswhitespace(char c);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
+/*   By: tcajee <tcajee@student.wethinkcode.co.za   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 14:15:01 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/30 10:00:07 by tcajee           ###   ########.fr       */
+/*   Created: 2019/05/30 12:29:25 by tcajee            #+#    #+#             */
+/*   Updated: 2019/05/30 12:33:04 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *as)
+int	ft_iswhitespace(char c)
 {
-	if (as)
-	{
-		while (*as)
-			*as++ = '\0';
-	}
+	if ((c >= '\t' && c <= '\r') || c == ' ')
+		return (1);
+	return (0);
 }

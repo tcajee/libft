@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:19:54 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/29 15:23:39 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/05/30 10:01:14 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char *new = (char *)malloc((ft_strlen(s) - 1) * sizeof(char) + 1):
-	if (s)
-	{
-		while(*s)
-			f(s++);
-	}
+	char *cursor;
+	char *new;
+
+	new = NULL;
+	if (!f || !s)
+		return (NULL);
+	new = ft_strnew(ft_strlen(s));
+	if (!new)
+		return (NULL);
+	cursor = new;
+	while (*s)
+		*cursor++ = f(*s++);
+	return (new);
 }

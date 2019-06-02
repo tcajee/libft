@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strwcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:52:36 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/30 15:13:28 by tcajee           ###   ########.fr       */
+/*   Created: 2019/05/31 11:34:04 by tcajee            #+#    #+#             */
+/*   Updated: 2019/06/02 17:19:26 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+size_t	ft_strwcount(const char *s, char c)
 {
-	int			res;
-	int			sign;
-	const char	*input;
+	size_t	words;
 
-	res = 0;
-	input = str;
-	sign = 1;
-	while (ft_iswhitespace(*input) == 1)
-		input++;
-	if (*input == '-' || *input == '+')
+	words = 0;
+	while (*s)
 	{
-		if (*input == '-')
-			sign = -1;
-		input++;
+		while (*s && *s == c)
+			s++;
+		if (*s != c && *s != '\0')
+			words++;
+		while (*s && *s != c)
+			s++;
 	}
-	while (*input && ft_isdigit(*input))
-		res = res * 10 + (*input++ - '0');
-	return (res * sign);
+	return (words);
 }
