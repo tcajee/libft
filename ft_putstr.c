@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcajee <tcajee@student.wethinkcode.co.za   +#+  +:+       +#+        */
+/*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:56:34 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/23 14:34:33 by tcajee           ###   ########.fr       */
+/*   Created: 2019/06/03 16:27:01 by tcajee            #+#    #+#             */
+/*   Updated: 2019/06/03 16:27:20 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

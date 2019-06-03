@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:13:07 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 16:04:52 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/03 16:07:56 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,56 +18,7 @@
 
 //--------------------------------------------------------------------------}}}
 
-//---FUNCTION---------------------------------------------------------------{{{
 
-char	**ft_strsplit(char const *s, char c)
-{
-	char **breadcrumb;
-	char		**array;
-	const char	*start;
-	size_t len;
-	size_t words;
-
-	if (!s)
-		return (NULL);
-	array = NULL;
-	words = ft_strwcount(s, c);
-printf("Set words: %zu\n", words);
-	array = (char **)malloc(words * sizeof(char *) + 1);
-	if (!array)
-		return (NULL);
-printf("Set array: %p\n", array);
-	breadcrumb = array;
-printf("Set breadcrumb: %p\n", breadcrumb);
-printf("Entering while..\n");
-	
-	while (words-- > 0)
-	{
-	printf("in while...\n");
-
-		start = ft_strwnext(s, c);
-
-	printf("start: %s\n", start);
-
-		len = ft_strwlen(start, c);
-
-	printf("Set len: %zu\n", len);
-
-	*breadcrumb = ft_strsub(start, 0, len);
-		if (!*breadcrumb)
-			return (NULL);
-	printf("Check address: %p\n", breadcrumb);
-	printf("Check content: %s\n", *breadcrumb);
-		s = (start + len);
-		breadcrumb++;
-	}
-	*breadcrumb = NULL;
-printf("Check breadcrumb: %p\n", breadcrumb);
-printf("Exiting function...\n");
-	return (array);
-}
-
-//--------------------------------------------------------------------------}}}
 
 //---TESTER-----------------------------------------------------------------{{{
 

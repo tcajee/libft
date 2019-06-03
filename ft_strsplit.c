@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:28:11 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/31 12:06:17 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/03 16:27:56 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
+	char		**breadcrumb;
 	char		**array;
 	const char	*start;
-	char		*new;
+	size_t		len;
+	size_t		words;
 
-	array = NULL;
-	new = NULL;
 	if (!s)
 		return (NULL);
-	*array = ft_strnew(ft_strwcount(s, c));
+	array = NULL;
+	words = ft_strwcount(s, c);
+	array = (char **)malloc(words * sizeof(char *) + 1);
 	if (!array)
 		return (NULL);
-	while (*s)
+	breadcrumb = array;
+	while (words-- > 0)
 	{
 		start = ft_strwnext(s, c);
-		new = ft_strsub(start, 0, ft_strwlen(start, c));
-		if (!new)
+		len = ft_strwlen(start, c);
+		*breadcrumb = ft_strsub(start, 0, len);
+		if (!*breadcrumb++)
 			return (NULL);
-		*array++ = new;
-		s = (start + ft_strwlen(start, c));
+		s = (start + len);
 	}
+	*breadcrumb = NULL;
 	return (array);
 }
