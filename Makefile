@@ -32,15 +32,14 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
-	echo "Libft.a..."
-	#ranlib $(NAME)
-	echo "Indexed..."
-
-$(OBJS): $(SRCS)
+$(NAME):
 	gcc $(FLAGS) $(SRCS)
 	echo "Compiled..."
+	ar -rc $(NAME) $(OBJS)
+	echo "Libft.a..."
+	ranlib $(NAME)
+	echo "Indexed..."
+
 
 clean:
 	rm -f $(OBJS)
