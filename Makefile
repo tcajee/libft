@@ -6,7 +6,7 @@
 #    By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/18 14:40:51 by tcajee            #+#    #+#              #
-#    Updated: 2019/06/02 16:04:47 by tcajee           ###   ########.fr        #
+#    Updated: 2019/06/03 17:18:27 by tcajee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 	   ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
 	   ft_iswhitespace.c ft_strwcount.c ft_strwnext.c ft_strwlen.c \
+	   ft_strrev.c \
 
 OBJS = $(SRCS:.c=.o)
 

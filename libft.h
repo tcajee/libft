@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/31 12:05:09 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/03 17:18:48 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ size_t				ft_strwcount(const char *s, char c);
 const char			*ft_strwnext(const char *s, char c);
 size_t				ft_strwlen(const char *s, char c);
 int					ft_iswhitespace(char c);
+char				*ft_strrev(char *s);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);

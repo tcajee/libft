@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:13:07 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 17:30:28 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/03 17:08:44 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,31 @@
 
 //---FUNCTION---------------------------------------------------------------{{{
 
-char	*ft_strrev(char *s)
+char	*ft_itoa(int n)
 {
-	char temp;
-	char *end;
-	char *start;
+	char *head;
+	char *string;
+	int x;
 
-	if (!s)
+	if (n < 0)
+		x = (n * -1);
+	else
+		x = n;
+	string = ft_strnew(12);
+	if (!string)
 		return (NULL);
-	start = s;
-	end = (s + (ft_strlen(s) - 1));
-	while (start < end)
+	head = string;
+	while (x > 0)
 	{
-		temp = *start;
-		*start++ = *end;
-		*end-- = temp;
+		printf("x: %d\n", x);
+		*string++ = (x % 10) + 48;
+		printf("x %% 10 + 48: %c\n", (x % 10) + 48);
+		x /= 10;
 	}
-	return (s);
+	if (n < 0)
+		*string = '-';
+	head = ft_strrev(head);
+	return (head);
 }
 
 //--------------------------------------------------------------------------}}}
@@ -51,12 +59,12 @@ int	ft_tester(char **inputs)
 printf("Checking arguments:\n");
 	while (i != 2)
 	{
-		printf("inputs[%d]: %s\n", i, inputs[i]);
+		printf("argv[%d]: %s\n", i, inputs[i]);
 		i++;
 	}
 printf("//--------------------------------------------------------------------------\n");
-	char *string = "reverse this";
-	string = ft_strrev(string);
+	int n = 12345;
+	char *string = ft_itoa(n);
 	printf("string: %s\n", string);
 		printf("//--------------------------------------------------------------------------\n");
 	return (RETURN);
