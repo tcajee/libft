@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 16:28:10 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 17:21:59 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/03 17:37:19 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_itoa(int n)
 		x = (n * -1);
 	else
 		x = n;
-	string = ft_strnew(12);
-	if (!string)
+	head = ft_strnew(12);
+	if (!head)
 		return (NULL);
-	head = string;
+	string = head;
 	while (x > 0)
 	{
 		*string++ = (x % 10) + 48;

@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 17:09:55 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 17:19:36 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/03 17:35:27 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,15 @@ char	*ft_strrev(char *s)
 	char *end;
 	char *start;
 
-	start = s;
-	end = s;
 	if (!s)
 		return (NULL);
-	while (*s)
-		end++;
-	s = start;
+	start = s;
+	end = (s + (ft_strlen(s) - 1));
 	while (start < end)
 	{
 		temp = *start;
-		*start = *end;
-		*end-- = *start++;
+		*start++ = *end;
+		*end-- = temp;
 	}
 	return (s);
 }
