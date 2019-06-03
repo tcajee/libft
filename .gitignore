@@ -1,0 +1,7 @@
+#Ignore dotfiles
+*.swp
+.DS_Store
+*.o
+*.a
+
+
