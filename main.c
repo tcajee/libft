@@ -24,33 +24,35 @@ char	**ft_strsplit(char const *s, char c)
 {
 	char		**array;
 	const char	*start;
-	char		*new;
+	char		*neww;
+	size_t len;
 
-printf("Breakpoint 1\n");
 	array = NULL;
-	new = NULL;
+	neww = NULL;
 	if (!s)
 		return (NULL);
 
-
-printf("Breakpoint 2\n");
-	new = ft_strnew(ft_strwcount(s, c));
-	*array = new;
-
-printf("Breakpoint 3\n");
+	len = ft_strwcount(s, c);
+	printf("Set len: %zu\n", len);
+	neww = ft_strnew(len);
+	printf("Set new: %s\n", neww);
+	array = (char **)neww;
+	printf("Set array: %p\n", array);
 	if (!array)
 		return (NULL);
-
+	printf("Entering while..\n");
 	while (*s)
 	{
-printf("Breakpoint 4\n");
+
 		start = ft_strwnext(s, c);
-		new = ft_strsub(start, 0, ft_strwlen(start, c));
-		if (!new)
+		neww = ft_strsub(start, 0, ft_strwlen(start, c));
+		if (!neww)
 			return (NULL);
-		*array++ = new;
+		*array++ = neww;
+		printf("in while...\n");
 		s = (start + ft_strwlen(start, c));
 	}
+	printf("Exiting function...\n");
 	return (array);
 }
 
@@ -63,17 +65,20 @@ int	ft_tester(char **inputs)
 	int RETURN = 42;
 
 // Custom tests:
-	int i = 0;
-	const char *input = inputs[1];
+//	int i = 0;
+	char const *input = inputs[1];
 	char delimiter = inputs[2][0];
-	char **output;
+	char **output = NULL;
+
 printf("Testing function...\n");
 printf("Input: %s\n", input);
 printf("Delimiter: %c\n", delimiter);
 	output = ft_strsplit(input, delimiter);
-	while (output[i])
-		printf("Output: %s\n", output[i++]);
-printf("//--------------------------------------------------------------------------");
+	if (!output)
+		return (42);
+	//while (*output)
+	printf("Output: %s\n", output[0]);
+printf("//--------------------------------------------------------------------------\n");
 	return (RETURN);
 }
 //--------------------------------------------------------------------------}}}
@@ -83,7 +88,7 @@ printf("//----------------------------------------------------------------------
 int	ft_return(int RETURN)
 {
 printf("Program exited with code: %d\n", RETURN);
-printf("//--------------------------------------------------------------------------");
+printf("//--------------------------------------------------------------------------\n");
 	return (RETURN);
 }
 //--------------------------------------------------------------------------}}}
@@ -100,7 +105,7 @@ printf("Checking arguments:\n");
 		i++;
 	}
 	i = 42;
-printf("//--------------------------------------------------------------------------");
+printf("//--------------------------------------------------------------------------\n");
 	return (i);
 }
 //--------------------------------------------------------------------------}}}
@@ -111,9 +116,9 @@ int	main(int argc, char **argv)
 {
 	int RETURN = 42;
 
-printf("//--------------------------------------------------------------------------");
+printf("//--------------------------------------------------------------------------\n");
 printf("Initialising: %s\n", argv[0]);
-printf("//--------------------------------------------------------------------------");
+printf("//--------------------------------------------------------------------------\n");
 	if (argc > 0)
 	{
 		RETURN = ft_args(argc, argv);
@@ -122,7 +127,7 @@ printf("//----------------------------------------------------------------------
 	else
 	{
 		printf("Program %s has no arguments...\n", argv[0]);
-		printf("//--------------------------------------------------------------------------");
+		printf("//--------------------------------------------------------------------------\n");
 	}
 	return (ft_return(RETURN));
 }
