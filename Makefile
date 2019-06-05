@@ -6,7 +6,7 @@
 #    By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/18 14:40:51 by tcajee            #+#    #+#              #
-#    Updated: 2019/06/03 17:18:27 by tcajee           ###   ########.fr        #
+#    Updated: 2019/06/05 13:33:46 by tcajee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ $(NAME):
 	echo "Libft.a..."
 	ranlib $(NAME)
 	echo "Indexed..."
-
 
 clean:
 	rm -f $(OBJS)

@@ -1,6 +1,6 @@
 WeThinkCode_ Cohort 2019
-Student: tcajee\n
-House Affinity: Fire\n
+Student: tcajee
+House Affinity: Fire
 Team: Magma
 Project: Libft
 Refer to wtc_libft/Libft - Subject(EN).pdf for official project instruction.

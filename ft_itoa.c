@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 16:28:10 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 17:37:19 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/05 16:43:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 char	*ft_itoa(int n)
 {
-	char *head;
+
+    /goinfre/tcajee/Desktop/libft
+    TODO 
+	FIXME
+    XXX
+    char *head;
 	char *string;
 	int x;
 
