@@ -5,40 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 16:28:10 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/05 16:43:53 by tcajee           ###   ########.fr       */
+/*   Created: 2019/06/06 15:38:25 by tcajee            #+#    #+#             */
+/*   Updated: 2019/06/06 15:53:45 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
-{
 
-    /goinfre/tcajee/Desktop/libft
-    TODO 
-	FIXME
-    XXX
-    char *head;
-	char *string;
-	int x;
-
-	if (n < 0)
-		x = (n * -1);
-	else
-		x = n;
-	head = ft_strnew(12);
-	if (!head)
-		return (NULL);
-	string = head;
-	while (x > 0)
-	{
-		*string++ = (x % 10) + 48;
-		x /= 10;
-	}
-	if (n < 0)
-		*string = '-';
-	head = ft_strrev(head);
-	return (head);
-}
-
+char    *ft_itoa(int n) { char    *head; char    *string; int     x; if (n == -2147483648) { return (ft_strdup("-2147483648")); } else if (n < 0 && n != -2147483648) x = n * -1; else if (n == 0) return (ft_strdup("0")); else x = n; string = ft_strnew(12); if (!string) return (NULL); head = string; while (x > 0) { *string++ = (x % 10) + 48; x /= 10; } if (n < 0 && n != -2147483648) *string = '-'; head = ft_strrev(head); string = head; head = ft_strcpy(ft_strnew(ft_strlen(string)), string); return (head); }

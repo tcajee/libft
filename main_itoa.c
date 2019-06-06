@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:13:07 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/05 13:37:21 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/06 15:30:08 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,39 @@
 
 char	*ft_itoa(int n)
 {
+
 	char *head;
 	char *string;
 	int x;
 
-	if (n < 0)
-		x = (n * -1);
-	else
-		x = n;
-	string = ft_strnew(12);
+	string = ft_strnew(13);
 	if (!string)
 		return (NULL);
+    if (n < 0)
+        x = n * -1;
+    else
+        x = n;
+    if (x == 0)
+        *string = 0 + 48;
 	head = string;
 	while (x > 0)
 	{
-		printf("x: %d\n", x);
-		*string++ = (x % 10) + 48;
-		printf("x %% 10 + 48: %c\n", (x % 10) + 48);
-		x /= 10;
+		if (x > 0)
+        {
+            *string++ = (x % 10) + 48;
+            x /= 10;
+        }
+        else
+            *string++ = 0 + 48;
 	}
-	if (n < 0)
-		*string = '-';
+    if (n < 0)
+        *string = '-';
 	head = ft_strrev(head);
+    string = head;
+    head = ft_strnew(ft_strlen(string));
+    head = ft_strcpy(head, string);
 	return (head);
+
 }
 
 //--------------------------------------------------------------------------}}}
@@ -63,9 +73,10 @@ printf("Checking arguments:\n");
 		i++;
 	}
 printf("//--------------------------------------------------------------------------\n");
-	int n = 12345;
+	int n = -2147483648;
 	char *string = ft_itoa(n);
 	printf("string: %s\n", string);
+	printf("strlen: %zu\n", ft_strlen(string));
 printf("//--------------------------------------------------------------------------\n");
 	return (RETURN);
 }

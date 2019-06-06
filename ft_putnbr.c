@@ -6,12 +6,13 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:58:24 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/23 14:44:31 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/06 16:47:08 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n);
-//ft_putnbr_fd(n, 1);
-
+void    ft_putnbr(int n)
+{
+    ft_putnbr_fd(n, 1);
+}

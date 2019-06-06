@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:13:07 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 17:33:56 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/06 17:48:32 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,26 @@
 
 //---FUNCTION---------------------------------------------------------------{{{
 
-char	*ft_strrev(char *s)
-{
-	char temp;
-	char *end;
-	char *start;
 
-	if (!s)
-		return (NULL);
-	start = s;
-	end = (s + (ft_strlen(s) - 1));
-	while (start < end)
-	{
-		temp = *start;
-		*start++ = *end;
-		*end-- = temp;
-	}
-	return (s);
+void	ft_putnbr_fd(int n, int fd)
+{
+
+    int  x;
+
+    x = n;
+    if (n == 2147483647)
+        ft_putstr_fd("2147483647", fd);
+    else if (n == -2147483648)
+        ft_putstr_fd("-2147483648", fd);
+    else if (n < 0)
+        ft_putchar_fd('-', fd);
+    else if (x > 9)
+    {
+        ft_putnbr_fd(x / 10, fd);
+        ft_putnbr_fd(x % 10, fd);
+    }
+    else
+        ft_putchar_fd(x + 48, fd);
 }
 
 //--------------------------------------------------------------------------}}}
@@ -55,9 +58,9 @@ printf("Checking arguments:\n");
 		i++;
 	}
 printf("//--------------------------------------------------------------------------\n");
-	char string[] = "reverse this";
-	char *output = ft_strrev(string);
-	printf("output: %s\n", output);
+
+	ft_putnbr(-2147483648 );
+	printf("\n");
 		printf("//--------------------------------------------------------------------------\n");
 	return (RETURN);
 }
