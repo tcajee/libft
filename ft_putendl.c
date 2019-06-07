@@ -6,13 +6,13 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:48:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/06 16:08:40 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:50:32 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
-    ft_putendl_fd(s, 1);
+	ft_putendl_fd(s, 1);
 }

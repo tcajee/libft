@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:13:07 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/06 15:30:08 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:30:59 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,67 @@
 //---FUNCTION---------------------------------------------------------------{{{
 
 char	*ft_itoa(int n)
+
 {
+	char    *head;
+	char    *string;
+	int     x;
 
-	char *head;
-	char *string;
-	int x;
-
-	string = ft_strnew(13);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	else if (n < 0 && n != -2147483648)
+		x = n * -1;
+	else if (n == 0) return (ft_strdup("0"));
+	else
+		x = n;
+	string = ft_strnew(12);
 	if (!string)
 		return (NULL);
-    if (n < 0)
-        x = n * -1;
-    else
-        x = n;
-    if (x == 0)
-        *string = 0 + 48;
 	head = string;
 	while (x > 0)
 	{
-		if (x > 0)
-        {
-            *string++ = (x % 10) + 48;
-            x /= 10;
-        }
-        else
-            *string++ = 0 + 48;
-	}
-    if (n < 0)
-        *string = '-';
+		*string++ = (x % 10) + 48;
+		x /= 10;
+	} 
+	if (n < 0 && n != -2147483648)
+		*string = '-';
 	head = ft_strrev(head);
-    string = head;
-    head = ft_strnew(ft_strlen(string));
-    head = ft_strcpy(head, string);
-	return (head);
-
+	string = head;
+	head = ft_strcpy(ft_strnew(ft_strlen(string)), string); return (head);
 }
+
+/* { */
+/* char *head; */
+	/* char *string; */
+	/* int x; */
+	/* string = ft_strnew(13); */
+	/* if (!string) */
+	/* 	return (NULL); */
+    /* if (n < 0) */
+        /* x = n * -1; */
+    /* else */
+        /* x = n; */
+    /* if (x == 0) */
+        /* *string = 0 + 48; */
+	/* head = string; */
+	/* while (x > 0) */
+	/* { */
+	/* 	if (x > 0) */
+        /* { */
+            /* *string++ = (x % 10) + 48; */
+            /* x /= 10; */
+        /* } */
+        /* else */
+            /* *string++ = 0 + 48; */
+	/* } */
+    /* if (n < 0) */
+        /* *string = '-'; */
+	/* head = ft_strrev(head); */
+    /* string = head; */
+    /* head = ft_strnew(ft_strlen(string)); */
+    /* head = ft_strcpy(head, string); */
+	/* return (head); */
+/* } */
 
 //--------------------------------------------------------------------------}}}
 
