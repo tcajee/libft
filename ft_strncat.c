@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:01:34 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/28 09:15:00 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/08 18:31:05 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	if (ft_strlen(s2) < n)
 		len = ft_strlen(s2);
 	s1[len] = '\0';
-	memcpy(s1, s2, len);
+	ft_memcpy(s1, s2, len);
 	return (temp);
 }

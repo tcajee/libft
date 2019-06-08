@@ -6,13 +6,13 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 11:37:13 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/03 17:21:45 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/08 18:30:17 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strwlen(const char *s, char c)
+size_t	ft_strwlen(const char *s, char c)
 {
 	size_t len;
 

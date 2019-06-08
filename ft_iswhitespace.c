@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcajee <tcajee@student.wethinkcode.co.za   +#+  +:+       +#+        */
+/*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 12:29:25 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/30 12:33:04 by tcajee           ###   ########.fr       */
+/*   Created: 2019/06/08 18:29:20 by tcajee            #+#    #+#             */
+/*   Updated: 2019/06/08 18:43:36 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
