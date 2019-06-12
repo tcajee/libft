@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:54:04 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/26 11:16:07 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/12 16:57:03 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*dst_h;
+	size_t	i;
+	char	*dst_h;
+	char	*src_h;
 
 	i = -1;
-	dst_h = (unsigned char *)dst;
+	dst_h = (char *)dst;
+	src_h = (char *)src;
 	while (++i < n && (dst || src))
-		*(dst_h + i) = *((unsigned char *)src + i);
+		dst_h[i] = src_h[i];
 	return (dst);
 }

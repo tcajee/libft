@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 16:03:32 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/30 16:41:00 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/10 18:44:01 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ char	*ft_strtrim(char const *s)
 			end--;
 		while (s++ != end)
 			len++;
-		new = ft_strnew(len);
+		new = ft_strsub(start, 0, len);
 		if (!new)
 			return (NULL);
-		ft_memcpy(new, start, len);
-		return (new);
 	}
 	return (new);
 }
