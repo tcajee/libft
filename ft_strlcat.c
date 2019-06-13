@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:16:53 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/28 11:55:42 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 17:19:32 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	minsize;
-	size_t	maxsize;
+	size_t	dstlen;
+	size_t	catlen;
 
-	i = -1;
-	minsize = ft_strlen(dst);
-	maxsize = minsize;
-	if (dstsize < minsize)
-		maxsize = dstsize;
-	maxsize = maxsize + ft_strlen(src);
-	while ((++i + minsize) < (dstsize - 1) && (dstsize > 0) && *(src + i))
-		*(dst + (i + minsize)) = *(src + i);
-	*(dst + (i + minsize)) = '\0';
-	return (maxsize);
+	i = 0;
+	dstlen = ft_strlen(dst);
+	catlen = dstlen;
+	if (dstsize < dstlen)
+		catlen = dstsize;
+	catlen += ft_strlen(src);
+	while (dstlen + i < dstsize - 1 && dstsize > 0 && src[i])
+	{
+		dst[dstlen + i] = src[i];
+		i++;
+	}
+	dst[dstlen + i] = '\0';
+	return (catlen);
 }

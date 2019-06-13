@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:38:25 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/12 16:04:06 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 15:52:43 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	else if (n < 0 && n != -2147483648)
-		x = n * -1;
 	else if (n == 0)
 		return (ft_strdup("0"));
+	else if (n < 0)
+		x = n * -1;
 	else
 		x = n;
 	string = ft_strnew(12);
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 		*string++ = (x % 10) + 48;
 		x /= 10;
 	}
-	if (n < 0 && n != -2147483648)
+	if (n < 0)
 		*string = '-';
 	head = ft_strcpy(ft_strnew(ft_strlen(head)), ft_strrev(head));
 	return (head);

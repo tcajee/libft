@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 16:03:32 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/10 18:44:01 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 15:07:42 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_strtrim(char const *s)
 	size_t		len;
 
 	new = NULL;
-	len = 0;
 	if (s)
 	{
+		len = 0;
 		end = (s + (ft_strlen(s)));
 		while (ft_iswhitespace(*s) == 1 && *s)
 			s++;

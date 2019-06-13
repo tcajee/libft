@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 12:03:13 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/08 16:07:26 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 13:55:31 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	t_list *next;
 
 	delete = *alst;
-	while (delete)
+	while (delete && del)
 	{
 		next = delete->next;
 		del(delete->content, delete->content_size);
