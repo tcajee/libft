@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:16:14 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/30 10:00:39 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 12:30:46 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	size_t i;
+	size_t len;
 
 	i = 0;
-	if (s)
+	if (s && f)
 	{
-		while (s[i])
+		len = ft_strlen(s);
+		while (i < len)
 		{
 			f(i, &s[i]);
 			i++;
