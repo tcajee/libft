@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 16:14:39 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/08 16:53:40 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 12:40:17 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	while (lst)
+	while (lst && f)
 	{
 		f(lst);
 		lst = lst->next;

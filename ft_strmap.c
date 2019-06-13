@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:19:54 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/30 10:01:14 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/13 12:38:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char *new;
 
 	new = NULL;
-	if (!f || !s)
-		return (NULL);
-	new = ft_strnew(ft_strlen(s));
-	if (!new)
-		return (NULL);
-	cursor = new;
-	while (*s)
-		*cursor++ = f(*s++);
+	if (s && f)
+	{
+		new = ft_strnew(ft_strlen(s));
+		if (!new)
+			return (NULL);
+		cursor = new;
+		while (*s)
+			*cursor++ = f(*s++);
+	}
 	return (new);
 }
