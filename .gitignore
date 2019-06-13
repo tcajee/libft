@@ -1,6 +1,6 @@
 #Ignore dotfiles
 *.swp
-*.DS_Store
+.DS_Store
 *.o
 *.a
-
+.gitignore
