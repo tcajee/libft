@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 10:53:05 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/13 15:05:18 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/27 16:29:34 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*new;
 
-	i = -1;
 	new = NULL;
 	if (s)
 	{
-		new = ft_strnew(len);
-		if (!new)
+		i = -1;
+		if (!(new = ft_strnew(len)))
 			return (NULL);
 		while (++i < len && s[i])
 			new[i] = s[start + i];

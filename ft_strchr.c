@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 11:57:56 by tcajee            #+#    #+#             */
-/*   Updated: 2019/05/28 12:03:48 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/27 16:09:15 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

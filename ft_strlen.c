@@ -6,7 +6,7 @@
 /*   By: tcajee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:06:25 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/13 14:39:06 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/27 16:01:12 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t			len;
+	size_t	len;
 
 	len = 0;
-	while (s[len])
-		len++;
+	if (s)
+	{
+		while (s[len])
+			len++;
+	}
 	return (len);
 }

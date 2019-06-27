@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 14:01:37 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/13 15:20:37 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/27 16:12:18 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n < 0)
 	{
 		if (n == -2147483648)

@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:38:25 by tcajee            #+#    #+#             */
-/*   Updated: 2019/06/13 15:52:43 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/06/17 10:38:01 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 char	*ft_itoa(int n)
 {
-	char	*head;
 	char	*string;
 	int		x;
+	size_t	i;
 
+	i = 0;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	else if (n == 0)
@@ -29,14 +30,13 @@ char	*ft_itoa(int n)
 	string = ft_strnew(12);
 	if (!string)
 		return (NULL);
-	head = string;
 	while (x > 0)
 	{
-		*string++ = (x % 10) + 48;
+		string[i++] = (x % 10) + 48;
 		x /= 10;
 	}
 	if (n < 0)
-		*string = '-';
-	head = ft_strcpy(ft_strnew(ft_strlen(head)), ft_strrev(head));
-	return (head);
+		string[i] = '-';
+	string = ft_strcpy(ft_strnew(ft_strlen(string)), ft_strrev(string));
+	return (string);
 }
