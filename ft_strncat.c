@@ -16,12 +16,12 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t	offset;
 
-	FT_(!s2, NULL)
+	FT_(!s2, NULL);
 	if (s1)
 	{
 		offset = ft_strlen(s1);
 		FT_(ft_strlen(s2) < n, (ft_memcpy(s1 + offset, s2,\
-						ft_strlen(s2) + 1) - offset))
+						ft_strlen(s2) + 1) - offset));
 		else
 		{
 			s1 = ft_memcpy(s1 + offset, s2, n) - offset;
