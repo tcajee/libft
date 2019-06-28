@@ -17,9 +17,9 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	t_list *delete;
 	t_list *next;
 
-	delete = *alst;
-	while (delete && del)
+	while (alst && *alst && del)
 	{
+		delete = *alst;
 		next = delete->next;
 		del(delete->content, delete->content_size);
 		ft_memdel((void **)&delete);
