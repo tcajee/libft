@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	if (str)
 	{
-		while (ft_iswhitespace(*input) == 1)
+		while (ft_isspace(*input) == 1)
 			input++;
 		if (*input == '-' || *input == '+')
 		{

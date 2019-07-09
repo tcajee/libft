@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+CC = gcc
+
 FLAGS = -Wall -Werror -Wextra -I. -c
 
 NAME = libft.a
@@ -26,26 +28,24 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
 	   ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 	   ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-	   ft_iswhitespace.c ft_strwcount.c ft_strwnext.c ft_strwlen.c \
-	   ft_strrev.c \
+	   ft_isspace.c ft_strwcount.c ft_strwnext.c ft_strwlen.c \
+	   ft_strrev.c get_next_line.c \
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(SRCS)
+	$(CC) $(FLAGS) $(SRCS)
 	ar -rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJS)
-	echo "Cleaned..."
 
 fclean: clean
 	rm -f $(NAME)
-	echo "Cleaned all..."
 
 re: fclean all
-	echo "Cleaned and recomplied..."
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re
