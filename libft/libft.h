@@ -17,23 +17,28 @@
 # include <unistd.h>
 
 # define FT_(x, y) if (x) return y;
-# define BUFF_SIZE 1
-/*
- * Apple OSX and iOS (Darwin)
-*/
+# define BUFF_SIZE 1024
+
 # if defined(__APPLE__) && defined(__MACH__)
+/* {{{
+*
+* Apple OSX and iOS (Darwin)
+*
+* }}} */
 # define FT_OPEN_MAX 4864
-/*
- * Debian,Ubuntu,Gentoo,Fedora,openSUSE,RedHat,Centos, (citation?)
-*/
 # elif defined(__linux__)
+/* {{{
+ *
+ * Debian, Ubuntu, Gentoo, Fedora, openSUSE, RedHat, Centos, others?
+ *
+ * }}} */
 # define FT_OPEN_MAX 1024
 #endif
 
 typedef struct		s_files
 {
 	char			*file[FT_OPEN_MAX + 1];
-	char			*line;
+	int				fd;
 }					t_files;
 
 typedef	struct		s_list

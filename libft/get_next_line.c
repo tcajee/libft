@@ -12,28 +12,26 @@
 
 #include "libft.h"
 
-static int	copy_next_line(t_files *files, int fd)
+static int	copy_next_line(t_files *files, int fd, char **line)
 {
-	char	*trace;
+	char	*split;
 	int		index;
 
-	trace = files->file[fd];
-	index = ft_strchr(trace, '\n') - trace;
-	FT_(!(files->line = ft_strsub(trace, 0, index)), -1);
+	split = files->file[fd];
+	index = ft_strchr(split, '\n') - split;
+	FT_(!(*line = ft_strsub(split, 0, index)), -1);
 	FT_(!(files->file[fd] =
-		ft_strsub(trace, index + 1, ft_strlen(trace) - index)), -1);
-	ft_strdel(&trace);
+		ft_strsub(split, index + 1, ft_strlen(split) - index)), -1);
+	ft_strdel(&split);
 	return (1);
 }
 
-static int	find_next_line(t_files *files, int fd)
+static int	find_next_line(t_files *files, int fd, char **line)
 {
 	char	buffer[BUFF_SIZE + 1];
 	char	*stage;
 	long	bytes;
 
-	if (!files->file[fd])
-		files->file[fd] = ft_strnew(0);
 	while (ft_strchr(files->file[fd], '\n') == NULL)
 	{
 		FT_((bytes = read(fd, buffer, BUFF_SIZE)) == 0, 0);
@@ -43,28 +41,23 @@ static int	find_next_line(t_files *files, int fd)
 		ft_strdel(&files->file[fd]);
 		files->file[fd] = stage;
 	}
-	return (1);
+	if (ft_strchr(files->file[fd], '\n'))
+		return (copy_next_line(files, fd, line));
+	else if (ft_strlen(files->file[fd]) > 0)
+	{
+		FT_(!(*line = ft_strdup(files->file[fd])), -1);
+		ft_strdel(&files->file[fd]);
+		return (1);
+	}
+	return (0);
 }
 
 int			get_next_line(const int fd, char **line)
 {
 	static t_files files;
 
-	FT_((read(fd, NULL, 0) == -1), -1);
-	FT_((fd < 0 || !line || read(fd, NULL, 0) == -1), -1);
-	FT_(find_next_line(&files, fd) < 0, -1);
-	if (ft_strchr(files.file[fd], '\n') != NULL)
-	{
-		FT_(copy_next_line(&files, fd) < 0, -1);
-		FT_(!(*line = ft_strdup(files.line)), -1);
-		ft_strdel(&files.line);
-	}
-	else if (ft_strlen(files.file[fd]) > 0)
-	{
-		FT_(!(*line = ft_strdup(files.file[fd])), -1);
-		ft_strdel(&files.file[fd]);
-	}
-	else
-		return (0);
-	return (1);
+	FT_((!line || read(fd, NULL, 0) == -1), -1);
+	if (!files.file[fd])
+		files.file[fd] = ft_strnew(0);
+	return (find_next_line(&files, fd, line));
 }
