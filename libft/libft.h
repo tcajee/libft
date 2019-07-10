@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/07/05 12:24:25 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/07/10 08:29:37 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,13 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
 # define FT_(x, y) if (x) return y;
 # define BUFF_SIZE 1024
-
 # if defined(__APPLE__) && defined(__MACH__)
-/* {{{
-*
-* Apple OSX and iOS (Darwin)
-*
-* }}} */
-# define FT_OPEN_MAX 4864
+#  define FT_OPEN_MAX 4864
 # elif defined(__linux__)
-/* {{{
- *
- * Debian, Ubuntu, Gentoo, Fedora, openSUSE, RedHat, Centos, others?
- *
- * }}} */
-# define FT_OPEN_MAX 1024
-#endif
+#  define FT_OPEN_MAX 1024
+# endif
 
 typedef struct		s_files
 {
