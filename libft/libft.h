@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/07/10 08:29:37 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/07/11 09:54:26 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 typedef struct		s_files
 {
 	char			*file[FT_OPEN_MAX + 1];
+	char			*line;
 	int				fd;
 }					t_files;
 
