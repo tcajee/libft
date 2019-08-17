@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 14:29:57 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/16 13:22:22 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/17 14:00:23 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	*ft_memalloc(size_t size)
 {
 	void *new;
 
-	FT_(!(new = (void *)malloc(size * sizeof(char))), NULL);
+	F_(!(new = (void *)malloc(size * sizeof(char))), NULL);
 	return (ft_memset(new, 0, size));
 }

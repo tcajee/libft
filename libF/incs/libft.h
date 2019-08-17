@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/15 08:10:45 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/17 14:04:30 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,10 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <string.h>
-#include <unistd.h>
+# include <unistd.h>
 
-
-/* F */
-/* _ */
-/* _F */
-/* F_ */
-/* _F_ */
-/* F__ */
-
-
-
-#define _(x, y) else (x)
+#define _(x) else (x)
 #define F(x, y) if (x) y
-
 #define FF(x, y, z) if (x && y) z
 #define _F(x, y) else if (x) y
 #define __(x) else return x
@@ -41,10 +30,18 @@
 #define F_F(x, y, z) F(x, y)_F(x, z) // if (x) z else if (y) z
 
 #define FFF(x, y, z) (x) ? y : z // F(F(F(x, y), y ), z) ||   if (x && y && z)
-#define ___(x, y, z) (x) ? return y : return z
+/* #define ___(x, y, z) (x) ? return y : return z */
 #define __F(x, y) else F(x, y) return _F(x, y) // if (y)
 
+# define T_(x) (x = x->next)
+# define _T(x) (x = x->prev)
 
+/* for (i = 0; i < n, i++) */
+/* while () */
+/* ___(x, y, z) while () */
+
+
+#define ___(x, y) while (x) y
 
 /* # define F_(x, y) if (x) y */
 /* # define _F(x, y) else if (x) y */
@@ -52,9 +49,9 @@
 /* # define FT_(x, y) if (x) return y */
 /* # define _FT(x, y) else if (x) return y */
 
-# define FT__(x, y, z) if (x) y = z
-# define FT_B(x) if (x) break;
-# define FT_X(x) return (x);
+/* # define FT__(x, y, z) if (x) y = z */
+/* # define FT_B(x) if (x) break; */
+/* # define FT_X(x) return (x); */
 
 # include "get_next_line.h"
 # include "ft_ls.h"
