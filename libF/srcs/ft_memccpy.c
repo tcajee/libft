@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 12:13:32 by tcajee            #+#    #+#             */
-/*   Updated: 2019/07/15 15:05:18 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/16 12:13:45 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t			i;
 	unsigned char	*dst_h;
+	size_t			i;
 
 	if (src && dst)
 	{
