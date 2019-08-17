@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/15 08:10:45 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/16 13:22:25 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,78 @@
 # include <string.h>
 # include <unistd.h>
 
-# define F_(x, y) if (x) y
-# define _F(x, y) else if (x) y
-# define _(x) else (x)
+F	(null)
+T	(null)
+FF	(null)
+FT	(null)
+TF	(null)
+TT	(null)
+__	(null)
+FFF	(null)
+FFT	(null)
+FF_	(null)
+FTF	(null)
+FTT	(null)
+F_F	(null)
+F_T	(null)
+F__	(null)
+TFF	(null)
+TFT	(null)
+TF_	(null)
+TTF	(null)
+TTT	(null)
+TT_	(null)
+T_F	(null)
+T_T	(null)
+T__	(null)
+_FF	(null)
+_F_	(null)
+_TF	(null)
+_TT	(null)
+_T_	(null)
+__F	(null)
+__T	(null)
+___	(null)
+
+F = IF
+T = ELSE
+_ = RETURN
+_ = WHILE
+
+F_	IFRET
+TF_	ELSEIFRET
+
+F	IFTHEN
+TF	ELSEIF
+T	ELSE
+
+T_	LISTNEXT
+_T	LISTPREV
+
+
+#define F if
+#define T else
+#define _ return
+#define W while
+#define B break
+#define C continue
+
+
+
 # define FT_(x, y) if (x) return y
 # define _FT(x, y) else if (x) return y
 
-# define FT__(x, y, z) if (x) y = z
-# define FT_B(x) if (x) break;
+# define F_(x, y) if (x) y
+# define _F(x, y) else if (x) y
+# define _(x) else (x)
+
+# define T_(x) (x = x->next)
+# define _T(x) (x = x->prev)
+
+
+
+# define F_T(x, y, z) if (x) y = z
+# define F_B(x) if (x) break;
 # define FT_X(x) return (x);
 
 # include "get_next_line.h"
@@ -37,8 +101,8 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_bzero(void *s, size_t n);
-void				*ft_memset(void *b, int c, size_t n);
+void				ft_bzero(void *dst, size_t n);
+void				*ft_memset(void *dst, int c, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t n);
@@ -79,7 +143,7 @@ const char			*ft_strwnext(const char *s, int c);
 size_t				ft_strwlen(const char *s, int c);
 char				*ft_strrev(char *s);
 
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
 
 int					ft_isalpha(int c);
