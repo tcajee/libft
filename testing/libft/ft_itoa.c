@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:38:25 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 11:02:03 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/19 15:40:13 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ char	*ft_itoa(int n)
 	___(x > 0, F(!!(out[i++] = (x % 10) + 48), x /= 10));
 	F(n < 0, out[i++] = '-');
 	F(i <= 12, out[i] = '\0');
-	return (new = ft_strcpy(ft_strnew(ft_strlen(out)), ft_strrev(out)));
+	F_(!(new = ft_strnew(ft_strlen(out))), NULL);
+	new = ft_strcpy(new, ft_strrev(out));
+	return (new);
 }

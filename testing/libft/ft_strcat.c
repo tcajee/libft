@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 08:56:49 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:46 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/19 15:11:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	F_(!s2, NULL);
-	F(s1, ft_strcpy(s1 + ft_strlen(s1), s2));
+	ft_strcpy(s1 + ft_strlen(s1), s2);
 	return (s1);
 }
