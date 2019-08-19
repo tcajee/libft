@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:10:10 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 12:49:20 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/19 13:20:08 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	printf("at_:	%d\n", atoi("+2798"));
-	printf("ft_:	%d\n", ft_atoi("+2798"));
+	printf("at_:	%d\n", atoi("+153"));
+	printf("ft_:	%d\n", ft_atoi("+153"));
 	return (0);
 }
