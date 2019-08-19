@@ -6,7 +6,7 @@
 #    By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/19 11:12:48 by tcajee            #+#    #+#              #
-#    Updated: 2019/08/19 12:58:00 by tcajee           ###   ########.fr        #
+#    Updated: 2019/08/19 16:17:56 by tcajee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,7 @@ INCS =  ../libft/libft.h
 LIB = -L../libft/ -lft
 
 %:
-	make re -C ../libft
+	# make re -C ../libft
 	$(CC) $(FLAGS) $(NAME) $(INCS) $(LIB) $(SRCS)
 	./a.out | cat -e
 	# $(filter-out $@,$(MAKECMDGOALS))
-
