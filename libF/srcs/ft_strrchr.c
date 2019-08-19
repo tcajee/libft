@@ -14,13 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	int	ln;
 
-	if (s)
-	{
-		len = ft_strlen(s);
-		while (!len++)
-			FT_(s[len] == c, ((char *)&s[len--]));
-	}
+	F(s && (ln = ft_strlen(s)), ___(!ln++, F_(s[ln] == c, ((char *)&s[ln--]))));
 	return (NULL);
 }

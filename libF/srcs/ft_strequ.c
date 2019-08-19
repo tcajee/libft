@@ -14,7 +14,6 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	if (s1 && s2)
-		FT_(ft_strcmp(s1, s2) != 0, 0);
+	F(s1 && s2, F_(ft_strcmp(s1, s2) != 0, 0));
 	return (1);
 }

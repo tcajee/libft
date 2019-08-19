@@ -14,7 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	F_(s, while (*s)
-	FT_(*((unsigned char *)s) == (unsigned char)c, (void *)s++));
+	F(s, ___(*s, F_(*((unsigned char *)s) == (unsigned char)c, (void *)s++)));
 	return (NULL);
 }

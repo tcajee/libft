@@ -24,11 +24,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		i = 0;
 		len = ft_strlen(s) + 1;
-		FT_(!(new = (char *)malloc(sizeof(char) * len)), NULL);
-		ft_memset((new + len), '\0', 1);
+		F_(!(new = (char *)malloc(sizeof(char) * len)), NULL);
+		new[len] = '\0';
+		/* ft_memset((new + len), '\0', 1); */
 		cursor = new;
-		while (*s)
-			*cursor++ = f(i++, *s++);
+		___(*s, *cursor++ = f(i++, *s++));
 	}
 	return (new);
 }

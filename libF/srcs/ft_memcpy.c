@@ -18,14 +18,13 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*dst_h;
 	char	*src_h;
 
-	FT_(!src, NULL);
+	F_(!src, NULL);
 	if (dst)
 	{
 		i = -1;
 		dst_h = (char *)dst;
 		src_h = (char *)src;
-		while (++i < n)
-			dst_h[i] = src_h[i];
+		___(++i < n, dst_h[i] = src_h[i]);
 	}
 	return (dst);
 }

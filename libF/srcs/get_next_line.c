@@ -15,13 +15,12 @@
 static int	copy_next_line(t_files *files, int fd)
 {
 	char	*trace;
-	int		index;
+	int		i;
 
 	trace = files->file[fd];
-	index = ft_strchr(trace, '\n') - trace;
-	FT_(!(files->line = ft_strsub(trace, 0, index)), -1);
-	FT_(!(files->file[fd] =
-		ft_strsub(trace, index + 1, ft_strlen(trace) - index)), -1);
+	i = ft_strchr(trace, '\n') - trace;
+	F_(!(files->line = ft_strsub(trace, 0, i)), -1);
+	F_(!(files->file[fd] = ft_strsub(trace, i + 1, ft_strlen(trace) - i)), -1);
 	ft_strdel(&trace);
 	return (1);
 }
@@ -32,14 +31,13 @@ static int	find_next_line(t_files *files, int fd)
 	char	*stage;
 	long	bytes;
 
-	if (!files->file[fd])
-		files->file[fd] = ft_strnew(0);
+	F(!files->file[fd], files->file[fd] = ft_strnew(0));
 	while (!(ft_strchr(files->file[fd], '\n')))
 	{
-		FT_((bytes = read(fd, buffer, BUFF_SIZE)) == 0, 0);
-		FT_(bytes < 0, -1);
+		F_((bytes = read(fd, buffer, BUFF_SIZE)) == 0, 0);
+		F_(bytes < 0, -1);
 		buffer[bytes] = '\0';
-		FT_(!(stage = ft_strjoin(files->file[fd], buffer)), -1);
+		F_(!(stage = ft_strjoin(files->file[fd], buffer)), -1);
 		ft_strdel(&files->file[fd]);
 		files->file[fd] = stage;
 	}
@@ -50,17 +48,17 @@ int			get_next_line(const int fd, char **line)
 {
 	static t_files files;
 
-	FT_((fd < 0 || !line || read(fd, NULL, 0) == -1), -1);
-	FT_(find_next_line(&files, fd) < 0, -1);
+	F_((fd < 0 || !line || read(fd, NULL, 0) == -1), -1);
+	F_(find_next_line(&files, fd) < 0, -1);
 	if (ft_strchr(files.file[fd], '\n'))
 	{
-		FT_(copy_next_line(&files, fd) < 0, -1);
-		FT_(!(*line = ft_strdup(files.line)), -1);
+		F_(copy_next_line(&files, fd) < 0, -1);
+		F_(!(*line = ft_strdup(files.line)), -1);
 		ft_strdel(&files.line);
 	}
 	else if (ft_strlen(files.file[fd]) > 0)
 	{
-		FT_(!(*line = ft_strdup(files.file[fd])), -1);
+		F_(!(*line = ft_strdup(files.file[fd])), -1);
 		ft_strdel(&files.file[fd]);
 	}
 	else

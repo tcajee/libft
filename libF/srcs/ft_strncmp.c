@@ -23,13 +23,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	len2 = ft_strlen(s2);
 	if (s1 && s2)
 	{
-		if (n > len1)
-			n = len1 + 1;
-		if (n > len2)
-			n = len2 + 1;
+		F(n > len1, n = len1 + 1);
+		F(n > len2, n = len2 + 1);
 		result = ft_memcmp(s1, s2, n);
-		FT_(result > 0, 1);
-		FT_(result < 0, -1);
+		F_(result > 0, 1);
+		F_(result < 0, -1);
 	}
 	return (result);
 }

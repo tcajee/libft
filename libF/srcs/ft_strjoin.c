@@ -21,8 +21,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 && s2)
 	{
 		len = ft_strlen(s1) + ft_strlen(s2) + 1;
-		FT_(!(new = (char *)malloc(sizeof(char) * len)), NULL);
-		ft_memset((new + len), '\0', 1);
+		F_(!(new = (char *)malloc(sizeof(char) * len)), NULL);
+		new[len] = '\0';
+		/* ft_memset((new + len), '\0', 1); */
 		new = ft_strcat(ft_strcat(new, s1), s2);
 	}
 	return (new);

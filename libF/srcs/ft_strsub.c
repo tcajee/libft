@@ -21,10 +21,10 @@ char	*ft_strsub(char const *s, unsigned int start, size_t n)
 	if (s)
 	{
 		i = -1;
-		FT_(!(new = (char *)malloc(sizeof(char) * n + 1)), NULL);
-		ft_memset((new + (n + 1)), '\0', 1);
-		while (++i < n && s[i])
-			new[i] = s[start + i];
+		F_(!(new = (char *)malloc(sizeof(char) * n + 1)), NULL);
+		new[n + 1] = '\0';
+		/* ft_memset((new + (n + 1)), '\0', 1); */
+		___(++i < n && s[i], new[i] = s[start + i]);
 	}
 	return (new);
 }

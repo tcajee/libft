@@ -17,10 +17,6 @@ size_t	ft_strwlen(const char *s, int c)
 	size_t len;
 
 	len = 0;
-	if (s)
-	{
-		while (*s && *s++ != c)
-			len++;
-	}
+	F(s, ___(*s && *s++ != c, len++));
 	return (len);
 }

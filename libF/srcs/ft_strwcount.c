@@ -21,12 +21,9 @@ size_t	ft_strwcount(const char *s, int c)
 	{
 		while (*s)
 		{
-			while (*s && *s == c)
-				s++;
-			if (*s && *s != c)
-				words++;
-			while (*s && *s != c)
-				s++;
+			___(*s && *s == c, s++);
+			F(*s && *s != c, words++);
+			___(*s && *s != c, s++);
 		}
 	}
 	return (words);

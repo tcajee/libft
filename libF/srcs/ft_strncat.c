@@ -17,18 +17,14 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t	offset;
 	size_t	len;
 
-	FT_(!s2, NULL);
+	F_(!s2, NULL);
 	if (s1)
 	{
 		offset = ft_strlen(s1);
 		len = ft_strlen(s2) + 1;
-		if ((len - 1) < n)
-			return (ft_memcpy(s1 + offset, s2, len) - offset);
-		else
-		{
-			s1 = ft_memcpy(s1 + offset, s2, n) - offset;
-			s1[offset + n] = '\0';
-		}
+		F_(len - 1 < n, ft_memcpy(s1 + offset, s2, len) - offset);
+		_(s1 = ft_strncpy(s1 + offset, s2, n) - offset);
+			/* s1[offset + n] = '\0'; */
 	}
 	return (s1);
 }

@@ -21,10 +21,9 @@ int	ft_strcmp(const char *s1, const char *s2)
 	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	FT_(!s1 && !s2, 1);
-	while (str1[i] && (str1[i] == str2[i]))
-		i++;
-	FT_((str1[i] - str2[i]) > 0, 1);
-	FT_((str1[i] - str2[i]) < 0, -1);
+	F_(!s1 && !s2, 1);
+	___(str1[i] && (str1[i] == str2[i]), i++);
+	F_((str1[i] - str2[i]) > 0, 1);
+	F_((str1[i] - str2[i]) < 0, -1);
 	return (str1[i] - str2[i]);
 }

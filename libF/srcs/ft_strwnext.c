@@ -14,10 +14,6 @@
 
 const char	*ft_strwnext(const char *s, int c)
 {
-	if (s)
-	{
-		while (*s && *s == c)
-			s++;
-	}
+	F(s, ___(*s && *s == c, s++));
 	return (s);
 }

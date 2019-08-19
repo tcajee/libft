@@ -19,10 +19,10 @@ char	*ft_strnstr(const char *hstack, const char *needle, size_t len)
 
 	minsize = ft_strlen(needle);
 	_ = hstack;
-	FT_(minsize == 0, ((char *)hstack));
+	F_(minsize == 0, ((char *)hstack));
 	while (*_ && (_ + minsize) <= (hstack + len))
 	{
-		FT_(*_ == *needle && !ft_strncmp(_, needle, minsize), (char *)_);
+		F_(*_ == *needle && !ft_strncmp(_, needle, minsize), (char *)_);
 		_++;
 	}
 	return (NULL);

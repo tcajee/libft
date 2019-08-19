@@ -18,14 +18,13 @@ char	*ft_strcpy(char *dst, const char *src)
 	char	*dst_h;
 	char	*src_h;
 
-	FT_(!src, NULL);
+	F_(!src, NULL);
 	if (dst)
 	{
 		i = -1;
 		dst_h = (char *)dst;
 		src_h = (char *)src;
-		while (src_h[++i])
-			dst_h[i] = src_h[i];
+		___(src_h[++i], dst_h[i] = src_h[i]);
 	}
 	return (dst);
 }

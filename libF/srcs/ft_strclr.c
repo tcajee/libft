@@ -14,7 +14,5 @@
 
 void	ft_strclr(char *as)
 {
-	if (as)
-		while (*as)
-			*as++ = '\0';
+	F(as, ___(*as, *as++ = '\0'));
 }
