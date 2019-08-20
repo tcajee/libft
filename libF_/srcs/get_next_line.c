@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 10:15:46 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/20 09:58:45 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:22:49 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int			get_next_line(const int fd, char **line)
 {
 	static char	*files[FT_OPEN_MAX + 1];
 
-	F_(!line || read(fd, NULL, 0) == -1,-1);
+	F_(!line || read(fd, NULL, 0) == -1, -1);
 	F_(find_next_line(&files[fd], fd) < 0, -1);
 	if (ft_strchr(files[fd], '\n'))
 	{

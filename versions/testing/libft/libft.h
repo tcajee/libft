@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/20 09:46:17 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:31:26 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
-# include "get_next_line.h"
-# include "ft_ls.h"
 
 typedef	struct		s_list
 {

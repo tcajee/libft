@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:27:09 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:53:48 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:30:46 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@
 # define T_(x) (x = x->next)
 # define _T(x) (x = x->prev)
 # define ___(x, y) while (x) y
-
-# include "get_next_line.h"
-# include "ft_ls.h"
 
 typedef	struct		s_list
 {
