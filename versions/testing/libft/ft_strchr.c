@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 11:57:56 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 13:36:53 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:52 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	F(s, ___(*s && *((unsigned char *)s) != (unsigned char)c, s++));
-	F_(*((unsigned char *)s) == (unsigned char)c, (char *)s);
+	if (s)
+	{
+		while (*s && *((unsigned char *)s) != (unsigned char)c)
+			s++;
+	}
+	if (*((unsigned char *)s) == (unsigned char)c)
+		return (char *)s;
 	return (NULL);
 }

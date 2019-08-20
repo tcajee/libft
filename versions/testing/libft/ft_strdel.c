@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 14:34:47 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:47 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:52 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	F(as, ft_memdel((void **)as));
+	if (as)
+		ft_memdel((void **)as);
 }

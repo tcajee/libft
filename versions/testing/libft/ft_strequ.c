@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 10:01:52 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:47 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	F(s1 && s2, F_(ft_strcmp(s1, s2) != 0, 0));
+	if (s1 && s2)
+	{
+		if (ft_strcmp(s1, s2) != 0)
+			return (0);
+	}
 	return (1);
 }

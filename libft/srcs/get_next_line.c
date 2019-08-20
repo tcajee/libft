@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 10:15:46 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/20 09:52:59 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:18:18 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	copy_next_line(char **file, int fd, char **line)
 	trace = file[fd];
 	i = ft_strchr(trace, '\n') - trace;
 	if (!(*line = ft_strsub(trace, 0, i)))
-			return (-1);
+		return (-1);
 	if (!(file[fd] = ft_strsub(trace, i + 1, ft_strlen(trace) - i)))
 		return (-1);
 	ft_strdel(&trace);

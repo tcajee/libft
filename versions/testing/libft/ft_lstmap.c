@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 16:17:37 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:45 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:51 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,17 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	if (lst && f)
 	{
 		copy = f(lst);
-		F_(!(next = ft_lstnew(copy->content, copy->content_size)), NULL);
+		if (!(next = ft_lstnew(copy->content, copy->content_size)))
+			return (NULL);
 		head = next;
-		T_(lst);
+		lst = lst->next;
 		while (lst)
 		{
 			copy = f(lst);
-			F_(!(next->next = ft_lstnew(copy->content, copy->content_size)),
-				NULL);
-			T_(next);
-			T_(lst);
+			if (!(next->next = ft_lstnew(copy->content, copy->content_size)))
+				return (NULL);
+			next = next->next;
+			lst = lst->next;
 		}
 	}
 	return (head);

@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 13:58:02 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:58:41 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ char	*ft_strnstr(const char *hstack, const char *needle, size_t len)
 
 	minsize = ft_strlen(needle);
 	c = hstack;
-	F_(minsize == 0, ((char *)hstack));
+	if (minsize == 0)
+		return ((char *)hstack);
 	while (*c && (c + minsize) <= (hstack + len))
 	{
-		F_(*c == *needle && !ft_strncmp(c, needle, minsize), (char *)c);
+		if (*c == *needle && !ft_strncmp(c, needle, minsize))
+			return ((char *)c);
 		c++;
 	}
 	return (NULL);

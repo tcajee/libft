@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:02:01 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:47 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	F(s && f, ___(*s, f(s++)));
+	if (s && f)
+	{
+		while (*s)
+			f(s++);
+	}
 }

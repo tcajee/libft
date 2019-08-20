@@ -6,7 +6,7 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 14:08:11 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:47 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:05:53 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char *new;
 
-	F_(!(new = (char *)malloc(sizeof(char) * (size + 1))), NULL);
+	if (!(new = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
 	return (ft_memset(new, '\0', size + 1));
 }
