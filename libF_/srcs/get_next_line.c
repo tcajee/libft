@@ -6,11 +6,11 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 10:15:46 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:47 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 09:43:36 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "../incs/libft.h"
 
 static int	copy_next_line(t_files *files, int fd)
 {
@@ -48,7 +48,7 @@ int			get_next_line(const int fd, char **line)
 {
 	static t_files files;
 
-	F_((fd < 0 || !line || read(fd, NULL, 0) == -1), -1);
+	F_(!line || read(fd, NULL, 0) == -1, -1);
 	F_(find_next_line(&files, fd) < 0, -1);
 	if (ft_strchr(files.file[fd], '\n'))
 	{

@@ -6,11 +6,11 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:16:53 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 15:12:56 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 09:43:36 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "../incs/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

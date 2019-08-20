@@ -6,11 +6,11 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:27:32 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 10:48:46 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 09:43:35 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "../incs/libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

@@ -6,11 +6,11 @@
 /*   By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:52:36 by tcajee            #+#    #+#             */
-/*   Updated: 2019/08/19 15:14:51 by tcajee           ###   ########.fr       */
+/*   Updated: 2019/08/20 09:43:34 by tcajee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "../incs/libft.h"
 
 int	ft_atoi(const char *str)
 {

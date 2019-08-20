@@ -6,46 +6,53 @@
 #    By: tcajee <tcajee@student.wethinkcode.co.za>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/18 14:40:51 by tcajee            #+#    #+#              #
-#    Updated: 2019/06/17 11:40:23 by tcajee           ###   ########.fr        #
+#    Updated: 2019/07/15 15:46:17 by tcajee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+# Project file
+NAME		= libft.a
 
-FLAGS = -Wall -Werror -Wextra -I. -c
+# Project builds and dirs
+SRCDIR		= ./srcs/
+SRCNAMES	= $(shell ls $(SRCDIR) | grep -E ".+\.c")
+SRC			= $(addprefix $(SRCDIR), $(SRCNAMES))
+INCDIR		= ./incs/
+BUILDDIR	= ./build/
+BUILDOBJS	= $(addprefix $(BUILDDIR), $(SRCNAMES:.c=.o))
 
-NAME = libft.a
+# Optimization and Compiler flags and commands
+CC			= clang
+CFLAGS		= -Wall -Werror -Wextra
 
-SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
-	   ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
-	   ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
-	   ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
-	   ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
-	   ft_isprint.c ft_toupper.c ft_tolower.c ft_memalloc.c ft_memdel.c \
-	   ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c \
-	   ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c \
-	   ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_itoa.c ft_putchar.c \
-	   ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
-	   ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
-	   ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-	   ft_isspace.c ft_strwcount.c ft_strwnext.c ft_strwlen.c \
-	   ft_strrev.c get_next_line.c \
+# Main rule
+all: $(BUILDDIR) $(NAME)
 
-OBJS = $(SRCS:.c=.o)
+# Objects dir rule
+$(BUILDDIR):
+	@echo "Compiling: $(NAME)"
+	@mkdir -p $(BUILDDIR)
 
-all: $(NAME)
+# Objects rule
+$(BUILDDIR)%.o:$(SRCDIR)%.c
+	@$(CC) $(CFLAGS) -I$(INCDIR) -o $@ -c $<
 
-$(NAME):
-	$(CC) $(FLAGS) $(SRCS)
-	ar -rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+# Project file rule
+$(NAME): $(BUILDOBJS)
+	@ar -rc $(NAME) $(BUILDOBJS)
+	@ranlib $(NAME)
+	@echo "Compiled: $(NAME)"
 
+# Cleaning up the object files
 clean:
-	rm -f $(OBJS)
+	@rm -rf $(BUILDDIR)
 
+# Getting rid of the project file
 fclean: clean
-	rm -f $(NAME)
+	@rm -rf $(NAME)
 
+# Do both of the above
 re: fclean all
 
-.PHONY: all clean fclean re
+# Just in case those files exist in the root dir
+.PHONY: all fclean clean re

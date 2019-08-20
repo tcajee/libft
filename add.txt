@@ -1,0 +1,50 @@
+
+
+
+toascii
+
+ft_isblank(void);
+ft_strtrimc(void);
+ft_strndup(void);
+ft_atof(void);
+ft_strlcpy(void);
+
+fputwc
+fputws
+
+getwc
+getwchar
+
+nan(3)
+int len
+int len base
+
+atol (3)
+atoll
+atol_l
+atoll_l
+atof
+atof_l
+
+
+strtol
+strtoll
+strtoul
+
+strtod
+strtold
+strtod_l
+
+strtoq
+strtoimax
+
+strtof
+
+itoa base
+ftoa
+ltoa
+lltoa
+
+atof
+
+
